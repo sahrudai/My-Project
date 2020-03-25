@@ -7,15 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		response.setHeader("Cache-Control", "no-store,must-revalidate");
-	%>
-	<form action="DisplayBalAction.jsp" method="post">
-	 <label for="card">Card Number:</label>
-	  <input type="text" id="card" name="card" Required><br><br>
-	  <label for="pin">Pin:</label>
-	  <input type="text" id="pin" name="pin" Required><br><br>
+<%
+	response.setHeader("Cache-Control", "no-store,must-revalidate");
+%>
+	<form action="login.jsp" method="post">
+	  <label for="empid">Employee Id:</label>
+	  <input type="text" id="empid" name="empid" Required><br><br>
+	  <label for="passcode">Passcode:</label>
+	  <input type="text" id="passcode" name="passcode" Required><br><br>
 	  <input type="submit" value="Submit">
-	  </form>
+	</form>
 </body>
 </html>

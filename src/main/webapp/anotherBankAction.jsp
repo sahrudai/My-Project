@@ -7,13 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		response.setHeader("Cache-Control", "no-store,must-revalidate");
-	%>
-	<h3>Select in which bank you want to deposit </h3>
-	<ul>
-		<li><a href="thisbank.jsp">This Bank</a></li>
-		<li><a href="anotherbank.jsp">Another Bank</a></li>
-	</ul>
+	<h1>Transaction Successful</h1>
 </body>
 </html>

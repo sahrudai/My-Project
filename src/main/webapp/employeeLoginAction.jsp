@@ -9,13 +9,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>login</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<%		
 		response.setHeader("Cache-Control", "no-store,must-revalidate");
-		String username=request.getParameter("username");
-		String password=request.getParameter("password");
+		String id=request.getParameter("empid");
+		String passcode=request.getParameter("passcode");
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
@@ -24,23 +24,24 @@
 		String dbUrl="jdbc:mysql://localhost:3306/bank_application?user=root&password=root";
 		con=DriverManager.getConnection(dbUrl);
 		
-		String query="select * from user_details where username=? and password=?";
+		String query="select * from employee_details where username=? and password=?";
 		
 		pstmt = con.prepareStatement(query);
-		pstmt.setString(1, username);
-		pstmt.setString(2, password);
+		pstmt.setString(1, id);
+		pstmt.setString(2, passcode);
 		rs=pstmt.executeQuery();
 		
 			if(rs.next())
 			{
 				session = request.getSession();
 				session.setAttribute("curSession", session);
-				response.sendRedirect("customerchoice.jsp");
+				response.sendRedirect("employeeChoice.jsp");
 			}
 			else
 			{
 	%>
-			<h1>User not found..</h1>
+			<h1>Employee details not found..</h1>
+			<a href="employeeLogin.jsp">go back</a>
 	<%
 			}
 		}

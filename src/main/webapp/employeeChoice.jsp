@@ -8,12 +8,22 @@
 </head>
 <body>
 	<%
-		response.setHeader("Cache-Control", "no-store,must-revalidate");
-	%>
-	<h3>Select in which bank you want to deposit </h3>
+	response.setHeader("Cache-Control", "no-store,must-revalidate");
+
+	session = (HttpSession)session.getAttribute("curSession");
+	if(session != null)
+	{
+%>
 	<ul>
-		<li><a href="thisbank.jsp">This Bank</a></li>
-		<li><a href="anotherbank.jsp">Another Bank</a></li>
+		<li><a href="withdraw.jsp">View Users</a></li>
+		<li><a href="displayBal.jsp">My account</a></li>
 	</ul>
+<%
+	}
+	else
+	{
+		response.sendRedirect("employeeLogin.jsp");
+	}
+%>
 </body>
 </html>

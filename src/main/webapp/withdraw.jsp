@@ -15,6 +15,15 @@
 	<%
 		response.setHeader("Cache-Control", "no-store,must-revalidate");
 	%>
-
+	<form action="withdrawAction.jsp" method="post">
+	  <label for="card">Card Number:</label>
+	  <input type="text" id="card" name="card" Required><br><br>
+	  <label for="pin">Pin:</label>
+	  <input type="text" id="pin" name="pin" Required><br><br>
+	  <label for="amount">Amount to be Withdrawn:</label>
+	  <input type="text" id="amount" name="amount" Required><br><br>
+	  <input type="submit" value="Submit">
+	</form>
+	<a href="customerchoice.jsp">go back</a>
 </body>
 </html>

@@ -9,39 +9,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>login</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<%		
+<%		
 		response.setHeader("Cache-Control", "no-store,must-revalidate");
-		String username=request.getParameter("username");
-		String password=request.getParameter("password");
+		String card=request.getParameter("card");
+		int pin=Integer.parseInt( request.getParameter("pin"));
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		try {
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		String dbUrl="jdbc:mysql://localhost:3306/bank_application?user=root&password=root";
-		con=DriverManager.getConnection(dbUrl);
-		
-		String query="select * from user_details where username=? and password=?";
-		
-		pstmt = con.prepareStatement(query);
-		pstmt.setString(1, username);
-		pstmt.setString(2, password);
-		rs=pstmt.executeQuery();
-		
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String dbUrl="jdbc:mysql://localhost:3306/bank_application?user=root&password=root";
+			con=DriverManager.getConnection(dbUrl);
+			
+			String query="select tot_bal from transaction_details where card_num=? and pin=?";
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, card);
+			pstmt.setInt(2, pin);
+			rs=pstmt.executeQuery();
 			if(rs.next())
 			{
-				session = request.getSession();
-				session.setAttribute("curSession", session);
-				response.sendRedirect("customerchoice.jsp");
+				%>
+				<h2>Total balance</h2>
+				<%=rs.getInt(1) %>
+				<%
 			}
 			else
 			{
-	%>
-			<h1>User not found..</h1>
-	<%
+			%>
+				<h2>invalid card details </h2>
+				<a href="displayBal.jsp">go back</a>
+			<%	
 			}
 		}
 		catch(Exception e)
@@ -49,5 +49,6 @@
 			e.printStackTrace();
 		}
 	%>
+	<a href="customerchoice.jsp">go back</a>
 </body>
 </html>
