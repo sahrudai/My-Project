@@ -15,9 +15,15 @@
 	{
 %>
 	<ul>
-		<li><a href="withdraw.jsp">View Users</a></li>
-		<li><a href="displayBal.jsp">My account</a></li>
+		<li><a href="withrawalsOfUser.jsp">View Withdrawals of Users</a></li>
+		<li><a href="depositsOfUser.jsp">View Deposits of  Users</a></li>
 	</ul>
+	<table>
+		 <tr>
+			<th><a href=logout.jsp>logout</a></th>
+		</tr>
+	</table>
+	
 <%
 	}
 	else

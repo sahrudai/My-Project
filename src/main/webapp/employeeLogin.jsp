@@ -4,18 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="employeeLogin.css">
 </head>
 <body>
 <%
 	response.setHeader("Cache-Control", "no-store,must-revalidate");
 %>
-	<form action="login.jsp" method="post">
-	  <label for="empid">Employee Id:</label>
-	  <input type="text" id="empid" name="empid" Required><br><br>
-	  <label for="passcode">Passcode:</label>
-	  <input type="text" id="passcode" name="passcode" Required><br><br>
-	  <input type="submit" value="Submit">
+	<div class="wrapper">
+	<form action="employeeLoginAction.jsp" class="form-signin">
+	<h2 class="form-signin-heading">Please login</h2>
+	   <input type="text" class="form-control" name="empid" placeholder="Employee ID" required="" autofocus="" />
+      <input type="password" class="form-control" name="passcode" placeholder="Passcode" required=""/>      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 	</form>
+	</div>
 </body>
 </html>

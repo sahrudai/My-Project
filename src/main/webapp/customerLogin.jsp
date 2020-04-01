@@ -5,17 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="customerLogin.css">
 </head>
 <body>
 <%
 	response.setHeader("Cache-Control", "no-store,must-revalidate");
 %>
-	<form action="login.jsp" method="post">
-	  <label for="username">Username:</label>
-	  <input type="text" id="username" name="username" Required><br><br>
-	  <label for="password">Password:</label>
-	  <input type="text" id="password" name="password" Required><br><br>
-	  <input type="submit" value="Submit">
-	</form>
+	<div class="wrapper">
+    <form class="form-signin" action="login.jsp">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  </div>
+	
 </body>
 </html>

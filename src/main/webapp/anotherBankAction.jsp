@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>Transaction Successful</h1>
+	<a href="customerchoice.jsp">go back</a><br>
+	<a href=logout.jsp>logout</a>
 </body>
 </html>

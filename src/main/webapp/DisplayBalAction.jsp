@@ -34,6 +34,8 @@
 				%>
 				<h2>Total balance</h2>
 				<%=rs.getInt(1) %>
+				<a href="customerchoice.jsp">go back</a>
+				<a href=logout.jsp>logout</a></th>
 				<%
 			}
 			else

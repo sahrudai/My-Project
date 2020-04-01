@@ -17,5 +17,6 @@
 	  <input type="text" id="pin" name="pin" Required><br><br>
 	  <input type="submit" value="Submit">
 	  </form>
+	  <a href="customerchoice.jsp">go back</a>
 </body>
 </html>

@@ -24,7 +24,7 @@
 		String dbUrl="jdbc:mysql://localhost:3306/bank_application?user=root&password=root";
 		con=DriverManager.getConnection(dbUrl);
 		
-		String query="select * from employee_details where username=? and password=?";
+		String query="select * from employee_details where employee_id=? and passcode=?";
 		
 		pstmt = con.prepareStatement(query);
 		pstmt.setString(1, id);

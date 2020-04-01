@@ -7,16 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		response.setHeader("Cache-Control", "no-store,must-revalidate");
-	%>
-	<h3>Select the bank you want to deposit </h3>
-	<ul>
-		<li><a href="thisbank.jsp">Our bank</a></li>
-		<li><a href="anotherbank.jsp">Another Bank</a></li>
-		<div>
-			<a href=logout.jsp>logout</a>
-		</div>
-	</ul>
+<%
+	response.setHeader("Cache-Control", "no-store,must-revalidate");
+%>
+<form action="withdrawalsOfUserAction.jsp" method="post">
+	  <label for="accNum">Account Number:</label>
+	  <input type="text" id="accNum" name="accNum" Required><br><br>
+	  <input type="submit" value="Submit">
+	</form>
+	<a href="employeeChoice.jsp">go back</a>
 </body>
 </html>

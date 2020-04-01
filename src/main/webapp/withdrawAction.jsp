@@ -54,6 +54,8 @@
 					pstmt.executeUpdate();
 				%>
 				<h2>Transaction Successful!!</h2>
+				<a href="customerchoice.jsp">go back</a><br>
+				<a href=logout.jsp>logout</a></th>
 				<%
 				}
 			else
@@ -80,7 +82,7 @@
 	}
 	else
 	{
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("customerLogin.jsp");
 	}
 %>
 	

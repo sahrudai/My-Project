@@ -41,6 +41,7 @@
 			{
 	%>
 			<h1>User not found..</h1>
+			<a href="customerLogin.jsp">go back</a>
 	<%
 			}
 		}
